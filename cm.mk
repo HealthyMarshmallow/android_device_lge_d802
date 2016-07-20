@@ -1,19 +1,34 @@
-# Inherit some common CM stuff.
+ifneq ($(wildcard vendor/cm/.),)
+# ZG Media
+$(call inherit-product, $(LOCAL_PATH)/zg85.mk)
+
+# Device identifier
+PRODUCT_NAME := cm_d802
+
+# Inherit some common stuff
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lge/d802/d802.mk)
+$(call inherit-product, $(LOCAL_PATH)/d802.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := d802
-PRODUCT_NAME := cm_d802
-PRODUCT_BRAND := LGE
-PRODUCT_MODEL := LG-D802
-PRODUCT_MANUFACTURER := lge
+# Enable call recording
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay_Dialer
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=lge/g2_open_com/g2:5.0.2/LRX22G/151061918340a:user/release-keys \
-    PRIVATE_BUILD_DESC="g2_open_com-user 5.0.2 LRX22G 151061918340a release-keys"
+# Enable HardwareWakeKeys
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay_FB
+
+# OTA
+PRODUCT_PACKAGES += TurboOTA
+
+# Kernel Adiutor
+PRODUCT_PACKAGES += KernelAdiutor
+
+# Dex2Oat
+DONT_DEXPREOPT_PREBUILTS := true
+
+# No SD Card
+PRODUCT_CHARACTERISTICS := nosdcard
+endif
