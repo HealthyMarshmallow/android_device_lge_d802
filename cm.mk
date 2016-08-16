@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += KernelAdiutor
 # Dex2Oat
 DONT_DEXPREOPT_PREBUILTS := true
 
+# G2 Power HAL
+TARGET_POWERHAL_VARIANT := none
+PRODUCT_PACKAGES += power.g2
+
 # No SD Card
 PRODUCT_CHARACTERISTICS := nosdcard
 endif

@@ -26,6 +26,10 @@ WITH_DEXPREOPT := true
 # Enable Minikin text layout engine
 USE_MINIKIN := true
 
+# QCOM Power HAL
+TARGET_POWERHAL_VARIANT := qcom
+PRODUCT_PACKAGES += power.msm8974
+
 # No SD Card
 PRODUCT_CHARACTERISTICS := nosdcard
 endif
