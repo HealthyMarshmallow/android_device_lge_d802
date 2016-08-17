@@ -20,9 +20,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay_Dialer
 # Enable HardwareWakeKeys
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay_FB
 
-# Enable Blur
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay_Blur
-
 # OTA
 PRODUCT_PACKAGES += TurboOTA
 
