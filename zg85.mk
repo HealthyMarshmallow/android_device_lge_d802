@@ -97,6 +97,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     audio/71-fonts.sh:system/addon.d/71-fonts.sh
 
-# System apps remove
+ifeq ($(TARGET_PRODUCT),cm_d802)
+# Remove SetupWizard
 PRODUCT_COPY_FILES += \
     audio/60-removal.sh:system/addon.d/60-removal.sh
+endif
+
+ifeq ($(TARGET_PRODUCT),turbo_d802)
+# Save LCD density
+PRODUCT_COPY_FILES += \
+    audio/99-devdpi.sh:system/addon.d/99-devdpi.sh
+    audio/AmazeFileManager.apk:system/app/AmazeFileManager/AmazeFileManager.apk
+endif
