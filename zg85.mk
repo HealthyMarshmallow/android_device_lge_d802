@@ -36,7 +36,6 @@ PRODUCT_COPY_FILES += \
 # Others
 PRODUCT_COPY_FILES += \
     audio/com.androits.gps.test.free_47.apk:system/app/AndroitsGPSTest/AndroitsGPSTest.apk \
-    audio/aws.apps.networkInfoIi_71.apk:system/app/NetworkInfo/NetworkInfo.apk \
     audio/com.tengu.sharetoclipboard_8.apk:system/app/ShareToClipboard/ShareToClipboard.apk \
     audio/NOWE/com.pluscubed.matlog_4.apk:system/app/Matlog/Matlog.apk
 
