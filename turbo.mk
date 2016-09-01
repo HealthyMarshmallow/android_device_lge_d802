@@ -20,9 +20,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay_Proximity
 # Kernel Adiutor
 PRODUCT_PACKAGES += KernelAdiutor
 
-# Dex2Oat
-WITH_DEXPREOPT := true
-
 # Enable Minikin text layout engine
 USE_MINIKIN := true
 
