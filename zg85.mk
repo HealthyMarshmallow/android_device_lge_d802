@@ -4,10 +4,12 @@
 PRODUCT_PACKAGES += \
     ambientsdk
 
+ifneq ($(TARGET_PRODUCT),turbo_d802)
 # Camera effects
 PRODUCT_COPY_FILES +=  \
     audio/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     audio/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
+endif
 
 # Prebuilts
 PRODUCT_COPY_FILES += \
@@ -39,10 +41,12 @@ PRODUCT_COPY_FILES += \
     audio/com.tengu.sharetoclipboard_8.apk:system/app/ShareToClipboard/ShareToClipboard.apk \
     audio/NOWE/com.pluscubed.matlog_4.apk:system/app/Matlog/Matlog.apk
 
+ifneq ($(TARGET_PRODUCT),turbo_d802)
 # Proprietary latinime libs needed for Keyboard swyping
 PRODUCT_COPY_FILES += \
     audio/SlimGApps/libjni_latinime.so:system/lib/libjni_latinime.so \
     audio/SlimGApps/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+endif
 
 # AdAway
 PRODUCT_COPY_FILES += \
