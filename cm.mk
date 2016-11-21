@@ -8,9 +8,6 @@ PRODUCT_NAME := cm_d802
 # Inherit some common stuff
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/d802.mk)
 
